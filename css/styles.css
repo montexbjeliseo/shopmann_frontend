@@ -1,0 +1,292 @@
+@import url("theme_default.css");
+@import url("modal.css");
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--secondary-background);
+}
+
+.main-container {
+    width: 100%;
+}
+
+header {
+    height: 70px;
+    background-color: var(--primary-background);
+}
+
+.header-width {
+    width: 90%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-size: 2rem;
+    width: 30%;
+}
+
+.logo a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bolder;
+    user-select: none;
+}
+
+.logo a span {
+    color: #ccc;
+}
+
+.navigation {
+    width: 70%;
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navigation ul li {
+    display: inline;
+}
+
+.navigation ul li a {
+    color: #fff;
+    text-transform: uppercase;
+    padding: 20px;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+.navigation ul li a:hover {
+    text-shadow: 3px 3px 3px #ccc;
+}
+
+.navigation #nav-btn {
+    user-select: none;
+    cursor: pointer;
+    padding: 30px 0;
+}
+
+.navigation .nav-icon {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    position: relative;
+    display: block;
+}
+
+.navigation .nav-icon::before,
+.navigation .nav-icon::after {
+    background-color: #ffffffcc;
+    position: absolute;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: all ease-out 0.2s;
+}
+
+.navigation .nav-icon::before {
+    top: 8px;
+}
+
+.navigation .nav-icon::after {
+    top: -8px;
+}
+
+.wrap {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.wrap .window {
+    background-color: var(--window-color);
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+    min-height: 100%;
+}
+
+.listView {
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+.listView ul {
+    list-style: none;
+}
+
+.listView ul li {
+    padding: 5px;
+}
+
+.listView table {
+    width: 100%;
+    text-align: left;
+}
+
+.listView table thead tr th {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.searchView {
+    padding: 10px;
+}
+
+.searchView input[type=search] {
+    padding: 5px;
+    border: 0;
+    background-color: #fff;
+    outline: none;
+    width: 100%;
+}
+
+.searchView input[type=search]:focus,
+.searchView input[type=search]:active {
+    border: 0;
+}
+
+.sidebar {
+    width: 30%;
+    min-height: 1vh;
+    height: 100%;
+    background-color: #fff;
+    bottom: 0;
+    position: absolute;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+    transition: 1s all ease;
+    user-select: none;
+    z-index: 1000;
+}
+
+.sidebar .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.hide {
+    margin-left: -100%;
+}
+
+.sidebar .profile {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar .profile img {
+    width: 130px;
+    margin: auto;
+}
+
+.sidebar .main-menu {
+    padding: 20px;
+}
+
+.sidebar .main-menu ul {
+    list-style-type: none;
+}
+
+.sidebar .main-menu ul li a {
+    margin: auto;
+    display: block;
+    color: grey;
+    font-weight: bold;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.sidebar .main-menu ul li a:hover {
+    text-transform: uppercase;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.sidebar .bottom {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.sidebar .bottom a {
+    color: tomato;
+    font-weight: bolder;
+    text-transform: uppercase;
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+    text-align: right;
+}
+
+.sidebar .bottom a:hover {
+    color: red;
+}
+
+.window.options {
+    grid-column: 1 / 3;
+}
+
+.window.inventory {
+    grid-column: 3 / 8;
+}
+
+.window.options,
+.window.inventory {
+    min-height: 100%;
+}
+
+.window.options .products {}
+
+.window.options .products ul {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.window.options .products ul li {
+    display: block;
+    padding: 5px;
+}
+
+.window.inventory h2,
+.window.options .products h2 {
+    color: #666;
+}
+
+.window.options .products ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #357;
+}
+
+.window.options .products ul li a:hover {
+    color: #56e;
+}
+
+.window.inventory {}
+
+footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 35px;
+    text-align: right;
+    font-weight: bolder;
+    margin-right: 20px;
+    color: #444;
+}
+
+.main-menu ul li a.active {
+    color: rgba(0, 255, 0, 1);
+}
